@@ -38,4 +38,19 @@ pub fn primitive_types(){
 
     // Use underscores to improve readability!
     println!("One million is written as {}", 1_000_000u32);
+
+    println!("Borrow a section of the array as a slice.");
+    analyze_slice(&_arrays[1 .. 4]);
+
+    for i in 0.._arrays.len() + 1{
+        match _arrays.get(i){ // get returns an Option Some, None, Except
+            Some(value) => println!("{}:{}",i, value), //if condition is matched, its Some
+            None => println!("{} is out of range lad", i) //if condition not matched, its None
+        }
+    }
+}
+
+fn analyze_slice(slice: &[i32]) {
+    println!("First element of the slice: {}", slice[0]);
+    println!("The slice has {} elements", slice.len());
 }
