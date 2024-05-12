@@ -1,5 +1,5 @@
-mod primitive_types;
+mod custom_types;
 
 fn main() {
-    primitive_types::primitive_types();
+    custom_types::_rect_area();
 }
